@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Session2 : MonoBehaviour
-{
 
+{
+    /*
     // Variables
     public int myNumber = 2;
     public bool questionTime = true;
@@ -15,14 +16,16 @@ public class Session2 : MonoBehaviour
     string[] fruits = { "banana", "apple", "mango", "blueberry" };
     List<int> evenNumbers = new List<int>();
     int[] evenNumbersSmart = new int[10];
+    */
+    //List to store humans
 
-       
+    List<HumanClass> rc3Tutors = new List<HumanClass>();
 
     // Use this for initialization
     void Start()
     {
         // Conditionals
-
+        /*
         // Normal if statement
         if (myNumber == 2)
         {
@@ -114,52 +117,25 @@ public class Session2 : MonoBehaviour
         {
             Debug.Log("Odd number : " + oddNumbers[i]);
         }
+        */
 
-       
+        // Create the tutors
+        HumanClass Octavian = new HumanClass(31, 1.7f, true, "Octavian", "Gheorghiu");
+        HumanClass Tyson = new HumanClass(34, 1.8f, true, "Tyson", "Hosmer");
+        HumanClass Dave = new HumanClass(33, 1.75f, true, "Dave", "Reeves");
+
+        rc3Tutors.Add(Octavian);
+        rc3Tutors.Add(Tyson);
+        rc3Tutors.Add(Dave);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-}
-
-
-
-public class HumanClass1
-{
-
-    //List to store humans
-    List<HumanClass1> rc3Tutors = new List<HumanClass1>();
-    private int v1;
-    private float v2;
-    private bool v3;
-    private string v4;
-    private string v5;
-
-    public HumanClass1(int v1, float v2, bool v3, string v4, string v5)
-    {
-        this.v1 = v1;
-        this.v2 = v2;
-        this.v3 = v3;
-        this.v4 = v4;
-        this.v5 = v5;
-    }
-
-
-    // Use this for initialization
-    void Start()
-{
-        // Create the tutors
-        HumanClass1 Octavian = new HumanClass1(31, 1.7f, true, "Octavian", "Gheorghiu");
-        HumanClass1 Tyson = new HumanClass1(34, 1.8f, true, "Tyson", "Hosmer");
-        HumanClass1 Dave = new HumanClass1(33, 1.75f, true, "Dave", "Reeves");
-
-        rc3Tutors.Add(Octavian);
-        rc3Tutors.Add(Tyson);
-        rc3Tutors.Add(Dave);
+     for(int i=0;i< rc3Tutors.Count; i++)
+        {
+            Debug.Log(rc3Tutors[i].GetfirstNames());
+        }
     }
 }
 
