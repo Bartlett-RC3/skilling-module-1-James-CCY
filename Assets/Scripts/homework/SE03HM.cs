@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Session3homwork : MonoBehaviour
+public class SE03HM : MonoBehaviour
 {
     // Variables
     int counter = 0;
@@ -13,37 +13,31 @@ public class Session3homwork : MonoBehaviour
     bool moveleft = true;
 
     public float moveSpeed = 10f;
-    public float turnSpeed = 50f;
+    public float turnSpeed = 10f;
 
-    // Use this for initialization
-    void Start()
-    {
-        /*
-        float speed = 50;
-        this.transform.Translate(0f,(speed * Time.deltaTime ),0f,Space.World);
-        
-        if (Input.GetKey(KeyCode.UpArrow))
-           this. transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
-        if (Input.GetKey(KeyCode.RightArrow))
-           this. transform.Translate(Vector3.right * turnSpeed * Time.deltaTime);
-        if (Input.GetKey(KeyCode.DownArrow))
-            this. transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
-        if (Input.GetKey(KeyCode.LeftArrow))
-            this. transform.Translate(Vector3.left* turnSpeed * Time.deltaTime);*/
-
-
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
+        // Move the cube up
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector3.up * 0.01f);
+        }
 
+        // Move the cube down
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector3.down * 0.01f);
+        }
 
         if (moveup == true)
         {
             if (counter <= 20)
             {
-                this.gameObject.GetComponent<Transform>().position = new Vector3(-10, counter * 1, 0);
+                this.gameObject.GetComponent<Transform>().position = new Vector3(-30, counter * 1, 0);
+                this.GetComponent<Renderer>().material.color = new Color32(232, 56, 40, 255);
                 counter++;
             }
 
@@ -61,6 +55,7 @@ public class Session3homwork : MonoBehaviour
             if (counter <= 20)
             {
                 this.gameObject.GetComponent<Transform>().position = new Vector3(counter * 1, 20, 0);
+                this.GetComponent<Renderer>().material.color = new Color32(243, 152, 0, 255);
                 counter++;
             }
             else
@@ -77,6 +72,7 @@ public class Session3homwork : MonoBehaviour
             if (counter <= 10)
             {
                 this.gameObject.GetComponent<Transform>().position = new Vector3(20, counter * -1, 0);
+                this.GetComponent<Renderer>().material.color = new Color32(34, 172, 56, 255);
                 counter++;
             }
             else
@@ -93,6 +89,7 @@ public class Session3homwork : MonoBehaviour
             if (counter <= 20)
             {
                 this.gameObject.GetComponent<Transform>().position = new Vector3(counter * -1, -10, 0);
+                this.GetComponent<Renderer>().material.color = new Color32(3, 70, 157, 255);
                 counter++;
             }
             else
@@ -108,7 +105,8 @@ public class Session3homwork : MonoBehaviour
         {
             if (counter <= 0)
             {
-                this.gameObject.GetComponent<Transform>().position = new Vector3(0, counter * 1, 0);
+                this.gameObject.GetComponent<Transform>().position = new Vector3(-30, counter * 1, 0);
+                this.GetComponent<Renderer>().material.color = new Color32(232, 56, 40, 255);
                 counter++;
             }
 
