@@ -29,7 +29,6 @@ public class JUMPingStar : MonoBehaviour {
 	void Update ()
     {
         StartCoroutine(creatCubestarCoroutine);
-       
     }
 
     // Coroutines
